@@ -2,6 +2,7 @@ namespace WalletPlus.Core.Domain.Entities
 {
     public class Transaction : BaseEntity
     {
+        public string TransactionReference { get; private set; }
         public long SenderId { get; private set; }
         public long RecipientId { get; private set; }
         public decimal Amount { get; private set; }

@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WalletPlus.Infrastructure.Persistence;
 
-namespace WalletPlus.API.Migrations
+namespace WalletPlus.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220127150730_initial")]
-    partial class initial
+    [Migration("20220127195446_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,6 +26,9 @@ namespace WalletPlus.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CustomerReference")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DateCreated")
                         .HasColumnType("nvarchar(max)");
@@ -71,6 +74,9 @@ namespace WalletPlus.API.Migrations
 
                     b.Property<long>("SenderId")
                         .HasColumnType("bigint");
+
+                    b.Property<string>("TransactionReference")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

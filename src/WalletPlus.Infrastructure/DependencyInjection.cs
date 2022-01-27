@@ -13,7 +13,7 @@ namespace WalletPlus.Infrastructure
         {
             services.AddDbContextPool<ApplicationDbContext>(builder => builder
                 .UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
-                    b => b.MigrationsAssembly("WalletPlus.API"))
+                    b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName))
                 .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
