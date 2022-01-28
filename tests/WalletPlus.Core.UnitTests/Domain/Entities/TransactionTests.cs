@@ -41,7 +41,7 @@ namespace WalletPlus.Core.UnitTests.Domain.Entities
             var recipient = new Customer("Viola", "Vino", "hustla@gmail.com", "08030537420");
             var actual = new Transaction(7000, sender.CustomerReference, recipient.CustomerReference);
 
-            actual.Amount.Should().BeApproximately(7000M, 0M);
+            actual.Amount.Should().Be(7000M);
             actual.Reference.Should().NotBeNullOrWhiteSpace();
             actual.SenderReference.Should().BeEquivalentTo(sender.CustomerReference);
             actual.RecipientReference.Should().BeEquivalentTo(recipient.CustomerReference);
