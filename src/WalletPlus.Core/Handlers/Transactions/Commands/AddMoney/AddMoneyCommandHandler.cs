@@ -31,8 +31,7 @@ namespace WalletPlus.Core.Handlers.Transactions.Commands.AddMoney
             await _unitOfWork.TransactionRepository.AddAsync(transaction);
             await _unitOfWork.SaveAsync();
 
-            wallet.AddMoney(command.Amount);
-            wallet.AddPoint(GetPoint(command.Amount));
+            wallet.Deposit(command.Amount);
 
             _unitOfWork.WalletRepository.Update(wallet);
             await _unitOfWork.SaveAsync();
@@ -45,16 +44,6 @@ namespace WalletPlus.Core.Handlers.Transactions.Commands.AddMoney
                 Balance = wallet.Balance,
                 PointBalance = wallet.PointBalance
             }, ResponseStatus.OK);
-        }
-
-        private decimal GetPoint(decimal amount)
-        {
-            if (amount < 5000M) return 0;
-            if (amount <= 10000M) return amount * 0.01M;
-            if (amount <= 25000M) return amount * 0.025M;
-            var point = amount * 0.05M;
-            if (point > 5000) return 5000;
-            return point;
         }
     }
 }

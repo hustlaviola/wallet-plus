@@ -53,7 +53,7 @@ namespace WalletPlus.Core.Handlers.Transactions.Commands.SendMoney
 
         private async Task CreditWallet(Wallet wallet, decimal amount)
         {
-            wallet.AddMoney(amount);
+            wallet.Credit(amount);
 
             _unitOfWork.WalletRepository.Update(wallet);
             await _unitOfWork.SaveAsync();

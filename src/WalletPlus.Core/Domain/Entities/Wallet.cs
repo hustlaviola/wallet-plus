@@ -16,19 +16,30 @@ namespace WalletPlus.Core.Domain.Entities
             PointBalance = 0;
         }
 
-        public void AddMoney(decimal amount)
+        public void Deposit(decimal amount)
         {
             Balance += amount;
+            PointBalance += GetPoint(amount); 
         }
 
-        public void AddPoint(decimal points)
+        public void Credit(decimal amount)
         {
-            PointBalance += points;
+            Balance += amount;
         }
 
         public void Debit(decimal amount)
         {
             Balance -= amount;
+        }
+
+        private decimal GetPoint(decimal amount)
+        {
+            if (amount < 5000M) return 0;
+            if (amount <= 10000M) return amount * 0.01M;
+            if (amount <= 25000M) return amount * 0.025M;
+            var point = amount * 0.05M;
+            if (point > 5000) return 5000;
+            return point;
         }
     }
 }
