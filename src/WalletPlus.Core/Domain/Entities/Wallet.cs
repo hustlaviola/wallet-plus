@@ -25,5 +25,10 @@ namespace WalletPlus.Core.Domain.Entities
         {
             PointBalance += points;
         }
+
+        public void Debit(decimal amount)
+        {
+            Balance -= amount;
+        }
     }
 }

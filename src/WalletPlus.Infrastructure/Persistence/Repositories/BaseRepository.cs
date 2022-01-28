@@ -19,6 +19,7 @@ namespace WalletPlus.Infrastructure.Persistence.Repositories
 
         public async Task AddAsync(TEntity model)
         {
+            model.DateCreated = DateTime.Now;
             await context.Set<TEntity>().AddAsync(model).ConfigureAwait(false);
         }
 
@@ -40,6 +41,10 @@ namespace WalletPlus.Infrastructure.Persistence.Repositories
             return await query.SingleOrDefaultAsync(predicate).ConfigureAwait(false);
         }
 
-        public void Update(TEntity model) => context.Update(model);
+        public void Update(TEntity model)
+        {
+            model.DateUpdated = DateTime.Now;
+            context.Update(model);
+        }
     }
 }

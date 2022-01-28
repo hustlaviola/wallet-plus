@@ -16,7 +16,7 @@ namespace WalletPlus.Core.Handlers.Transactions.AddMoney
                 .NotEmpty()
                 .WithMessage("'amount' is required")
                 .GreaterThan(0)
-                .WithMessage("'amount' must be grater than zero")
+                .WithMessage("'amount' must be greater than 0")
                 .LessThanOrEqualTo(1000000000)
                 .WithMessage("'amount' cannot exceed 100000000");
         }
