@@ -21,6 +21,7 @@ namespace WalletPlus.API.Controllers
         public async Task<IActionResult> AddCustomer(AddCustomerCommand request)
         {
             var response = await Mediator.Send(request);
+
             return ResolveActionResult(response);
         }
     }
