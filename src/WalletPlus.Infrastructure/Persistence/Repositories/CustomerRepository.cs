@@ -16,13 +16,13 @@ namespace WalletPlus.Infrastructure.Persistence.Repositories
         public async Task<bool> EmailExists(string email)
         {
             return (await context.Set<Customer>().SingleOrDefaultAsync(
-                c => c.Email.Equals(email, StringComparison.OrdinalIgnoreCase))) != null;
+                c => c.Email.Equals(email))) != null;
         }
 
         public async Task<bool> PhoneNumberExists(string phoneNumber)
         {
             return (await context.Set<Customer>().SingleOrDefaultAsync(
-                c => c.PhoneNumber.Equals(phoneNumber, StringComparison.OrdinalIgnoreCase))) != null;
+                c => c.PhoneNumber.Equals(phoneNumber))) != null;
         }
     }
 }

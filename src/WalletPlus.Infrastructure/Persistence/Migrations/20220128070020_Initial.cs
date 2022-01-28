@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WalletPlus.Infrastructure.Persistence.Migrations
 {
@@ -17,8 +18,8 @@ namespace WalletPlus.Infrastructure.Persistence.Migrations
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DateCreated = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DateUpdated = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DateUpdated = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -31,28 +32,17 @@ namespace WalletPlus.Infrastructure.Persistence.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TransactionReference = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SenderId = table.Column<long>(type: "bigint", nullable: false),
-                    RecipientId = table.Column<long>(type: "bigint", nullable: false),
                     Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    DateCreated = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DateUpdated = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Reference = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SenderReference = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RecipientReference = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TransactionType = table.Column<byte>(type: "tinyint", nullable: false),
+                    DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DateUpdated = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Transactions", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Transactions_Customers_RecipientId",
-                        column: x => x.RecipientId,
-                        principalTable: "Customers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Transactions_Customers_SenderId",
-                        column: x => x.SenderId,
-                        principalTable: "Customers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -62,10 +52,11 @@ namespace WalletPlus.Infrastructure.Persistence.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CustomerId = table.Column<long>(type: "bigint", nullable: false),
+                    CustomerReference = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Balance = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     PointBalance = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    DateCreated = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DateUpdated = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DateUpdated = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -77,16 +68,6 @@ namespace WalletPlus.Infrastructure.Persistence.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Transactions_RecipientId",
-                table: "Transactions",
-                column: "RecipientId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Transactions_SenderId",
-                table: "Transactions",
-                column: "SenderId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Wallets_CustomerId",

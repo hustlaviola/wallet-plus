@@ -11,6 +11,8 @@ namespace WalletPlus.Core.Domain.Entities
         public string RecipientReference { get; private set; }
         public TransactionType TransactionType { get; private set; }
 
+        public Transaction() {}
+
         public Transaction(decimal amount, string sender)
         {
             Amount = amount;

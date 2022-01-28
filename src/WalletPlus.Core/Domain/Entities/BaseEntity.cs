@@ -5,6 +5,6 @@ namespace WalletPlus.Core.Domain.Entities
     {
         public long Id { get; set; }
         public DateTime DateCreated { get; set; }
-        public DateTime DateUpdated { get; set; }
+        public DateTime? DateUpdated { get; set; }
     }
 }
