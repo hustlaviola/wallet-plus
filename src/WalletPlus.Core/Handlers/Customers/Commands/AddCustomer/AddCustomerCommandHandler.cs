@@ -6,7 +6,7 @@ using WalletPlus.Core.Common.Exceptions;
 using WalletPlus.Core.Common.Interfaces.Repositories;
 using WalletPlus.Core.Domain.Entities;
 
-namespace WalletPlus.Core.Handlers.Customers.AddCustomer
+namespace WalletPlus.Core.Handlers.Customers.Commands.AddCustomer
 {
     public class AddCustomerCommandHandler : BaseHandler, IRequestHandler<AddCustomerCommand, BaseResponse>
     {

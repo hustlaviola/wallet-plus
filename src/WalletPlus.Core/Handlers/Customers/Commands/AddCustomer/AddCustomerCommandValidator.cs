@@ -1,7 +1,7 @@
 using FluentValidation;
 using WalletPlus.Core.Common.Constants;
 
-namespace WalletPlus.Core.Handlers.Customers.AddCustomer
+namespace WalletPlus.Core.Handlers.Customers.Commands.AddCustomer
 {
     public class AddCustomerCommandValidator : AbstractValidator<AddCustomerCommand>
     {

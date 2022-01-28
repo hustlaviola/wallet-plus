@@ -1,4 +1,4 @@
-namespace WalletPlus.Core.Handlers.Customers.AddCustomer
+namespace WalletPlus.Core.Handlers.Customers.Commands.AddCustomer
 {
     public class AddCustomerCommand : MediatR.IRequest<Common.DTOs.BaseResponse>
     {

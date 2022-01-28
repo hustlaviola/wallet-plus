@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WalletPlus.Core.Common.DTOs;
-using WalletPlus.Core.Handlers.Customers.AddCustomer;
+using WalletPlus.Core.Handlers.Customers.Commands.AddCustomer;
 
 namespace WalletPlus.API.Controllers
 {
