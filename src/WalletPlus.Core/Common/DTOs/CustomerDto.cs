@@ -1,6 +1,6 @@
 namespace WalletPlus.Core.Common.DTOs
 {
-    public class AddCustomerResponse
+    public class CustomerDto
     {
         public string CustomerReference { get; set; }
         public string FirstName { get; set; }

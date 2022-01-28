@@ -36,7 +36,13 @@ namespace WalletPlus.Core.Handlers.Customers.AddCustomer
             await _unitOfWork.CustomerRepository.AddAsync(customer);
             await _unitOfWork.SaveAsync();
 
-            return HandleResponse(new AddCustomerResponse
+            var wallet = new Wallet(customer.Id, customer.CustomerReference);
+            
+            await _unitOfWork.WalletRepository.AddAsync(wallet);
+            await _unitOfWork.SaveAsync();
+
+
+            return HandleResponse(new CustomerDto
             {
                 CustomerReference = customer.CustomerReference,
                 FirstName = customer.FirstName,
