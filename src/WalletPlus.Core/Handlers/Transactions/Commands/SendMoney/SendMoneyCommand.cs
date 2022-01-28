@@ -1,4 +1,4 @@
-namespace WalletPlus.Core.Handlers.Transactions.SendMoney
+namespace WalletPlus.Core.Handlers.Transactions.Commands.SendMoney
 {
     public class SendMoneyCommand : MediatR.IRequest<Common.DTOs.BaseResponse>
     {

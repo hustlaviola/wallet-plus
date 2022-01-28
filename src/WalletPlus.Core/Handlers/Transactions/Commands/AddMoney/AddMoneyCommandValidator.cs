@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace WalletPlus.Core.Handlers.Transactions.AddMoney
+namespace WalletPlus.Core.Handlers.Transactions.Commands.AddMoney
 {
     public class AddMoneyCommandValidator : AbstractValidator<AddMoneyCommand>
     {

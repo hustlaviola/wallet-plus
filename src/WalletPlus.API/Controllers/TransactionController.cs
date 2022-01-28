@@ -2,8 +2,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WalletPlus.Core.Common.DTOs;
-using WalletPlus.Core.Handlers.Transactions.AddMoney;
-using WalletPlus.Core.Handlers.Transactions.SendMoney;
+using WalletPlus.Core.Handlers.Transactions.Commands.AddMoney;
+using WalletPlus.Core.Handlers.Transactions.Commands.SendMoney;
 
 namespace WalletPlus.API.Controllers
 {

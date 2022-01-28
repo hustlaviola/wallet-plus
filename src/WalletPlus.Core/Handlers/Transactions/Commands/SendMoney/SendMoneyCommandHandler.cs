@@ -6,7 +6,7 @@ using WalletPlus.Core.Common.Exceptions;
 using WalletPlus.Core.Common.Interfaces.Repositories;
 using WalletPlus.Core.Domain.Entities;
 
-namespace WalletPlus.Core.Handlers.Transactions.SendMoney
+namespace WalletPlus.Core.Handlers.Transactions.Commands.SendMoney
 {
     public class SendMoneyCommandHandler : BaseHandler, IRequestHandler<SendMoneyCommand, BaseResponse>
     {
