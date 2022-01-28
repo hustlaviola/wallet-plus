@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletPlus.Core", "src\Wall
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletPlus.Infrastructure", "src\WalletPlus.Infrastructure\WalletPlus.Infrastructure.csproj", "{0BCC40D0-C704-4A62-B8A5-AF7DE894B2CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletPlus.Core.UnitTests", "tests\WalletPlus.Core.UnitTests\WalletPlus.Core.UnitTests.csproj", "{39046ADB-B47F-4065-AB5D-AEFAF6931098}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletPlus.Core.IntegrationTests", "tests\WalletPlus.Core.IntegrationTests\WalletPlus.Core.IntegrationTests.csproj", "{767BBE2D-A31F-48B4-BD15-87CC87B0FA10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,18 @@ Global
 		{0BCC40D0-C704-4A62-B8A5-AF7DE894B2CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BCC40D0-C704-4A62-B8A5-AF7DE894B2CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BCC40D0-C704-4A62-B8A5-AF7DE894B2CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39046ADB-B47F-4065-AB5D-AEFAF6931098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39046ADB-B47F-4065-AB5D-AEFAF6931098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39046ADB-B47F-4065-AB5D-AEFAF6931098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39046ADB-B47F-4065-AB5D-AEFAF6931098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B86087F0-9572-4404-A629-7FBC660B1E69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B86087F0-9572-4404-A629-7FBC660B1E69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B86087F0-9572-4404-A629-7FBC660B1E69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B86087F0-9572-4404-A629-7FBC660B1E69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{767BBE2D-A31F-48B4-BD15-87CC87B0FA10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{767BBE2D-A31F-48B4-BD15-87CC87B0FA10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{767BBE2D-A31F-48B4-BD15-87CC87B0FA10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{767BBE2D-A31F-48B4-BD15-87CC87B0FA10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
